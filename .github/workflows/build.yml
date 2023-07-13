@@ -24,6 +24,7 @@ jobs:
           pip install wheel
           pip install twine
           pip install cython
+          pip install auditwheel
 
       - name: Build Cython files
         run: |
@@ -33,8 +34,12 @@ jobs:
         run: |
           python setup.py bdist_wheel
 
+      - name: Repair manylinux wheel
+        run: |
+          auditwheel repair dist/*.whl
+
       - name: Publish artifact
         uses: actions/upload-artifact@v3
         with:
           name: wheel
-          path: dist/*.whl
+          path: wheelhouse/
