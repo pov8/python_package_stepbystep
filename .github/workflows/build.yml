@@ -39,7 +39,7 @@ jobs:
           auditwheel repair dist/*.whl
 
       - name: Publish artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: wheel
           path: wheelhouse/
