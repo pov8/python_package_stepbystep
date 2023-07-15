@@ -25,7 +25,6 @@ jobs:
           pip install twine
           pip install cython
           pip install auditwheel
-          pip install patchelf
 
       - name: Build Cython files
         run: |
