@@ -6,6 +6,6 @@ extensions = [
 ]
 
 setup(
-    name="cython_package_stepbystep",
+    name="cpython_package_stepbystep",
     ext_modules=cythonize(extensions),
 )
